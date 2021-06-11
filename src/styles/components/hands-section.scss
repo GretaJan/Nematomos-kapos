@@ -1,0 +1,71 @@
+@import '../base/colors';
+@import '../base/container';
+@import '../base/typography';
+
+
+.hands-section {
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        img {
+            height: 100%;
+            position: absolute;
+
+        }
+    }
+
+    .text-container {
+        @include fullContainer;
+        @include verticalPadding;
+
+        .text-inner-wrap {
+            @include textWidthContainer(45rem);
+            margin-left: auto; 
+            max-width: 100%;
+
+            & > * {
+                position: relative;
+            }
+        }
+
+        h1 {
+            @include titleLine(right);
+            @include text-style(700, right);
+        }
+        p {
+            @include textWidthContainer(65rem);
+            margin-left: auto; 
+        }
+
+        .text-inner-wrap > *:nth-child(2) {
+            @include text-style(500, right);
+        }
+        .text-inner-wrap > *:nth-child(3) {
+            padding-top: 2.5rem;
+            @include text-style(700, right);
+        }
+    }
+}
+
+@media (min-width: 904px) {
+    .hands-section {
+        position: relative;
+        .image-container {
+            position: relative;
+            overflow: visible;
+            height: auto;
+            img {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .text-container {
+            @include absoluteTextContainer;
+            @include alignRight((-50%, 50%));
+        }
+    }
+}
+

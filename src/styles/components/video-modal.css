@@ -1,0 +1,233 @@
+.hands-section {
+  background: #8dc9d1; }
+
+.slider-section {
+  background: #8dc9d1; }
+
+.artboard-section {
+  background: #8dc9d1; }
+
+.hands-section {
+  background: #8dc9d1; }
+
+.slider-section {
+  background: #8dc9d1; }
+
+.artboard-section {
+  background: #8dc9d1; }
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0; }
+  body > *:not(footer) {
+    border-bottom: 2px solid #ffffff; }
+
+.title {
+  margin-bottom: 1em; }
+
+.logoWrap {
+  max-width: 120px;
+  min-width: 100px;
+  width: 20%;
+  z-index: 1; }
+  .logoWrap img {
+    max-width: 100%; }
+
+@media (min-width: 905px) {
+  .title {
+    margin-bottom: 4.7em; } }
+@media (max-width: 678px) {
+  .container {
+    padding: 0 .5rem; }
+
+  .halfContainer {
+    padding: 0 .5rem; } }
+.hands-section {
+  background: #8dc9d1; }
+
+.slider-section {
+  background: #8dc9d1; }
+
+.artboard-section {
+  background: #8dc9d1; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline-color: #dedede;
+  outline-width: 1px; }
+
+html {
+  font-size: 62.5%;
+  margin: 0;
+  color: #ffffff; }
+
+body {
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: .2em; }
+
+body {
+  font-family: "Montserrat"; }
+
+h1 {
+  font-size: 7rem;
+  position: relative;
+  padding-bottom: 2.8rem;
+  margin-bottom: 2.8rem; }
+
+.afterLineRight::after {
+  content: '';
+  width: 1em;
+  height: 3px;
+  display: block;
+  background-color: #ffffff;
+  bottom: 0;
+  right: 0;
+  position: absolute; }
+
+.afterLineLeft::after {
+  content: '';
+  width: 1em;
+  height: 3px;
+  display: block;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+  position: absolute; }
+
+h2 {
+  font-size: 5rem; }
+
+h3 {
+  font-size: 4rem; }
+
+h4 {
+  font-size: 3.7rem; }
+
+h5 {
+  font-size: 3.2rem; }
+
+p {
+  font-size: 2.5rem; }
+
+span {
+  font-size: 1.2rem; }
+
+.smallerTxt {
+  font-size: 2.8rem; }
+
+.boldTxt {
+  font-weight: 700; }
+
+.lightTxt {
+  font-weight: 300; }
+
+.regularTxt {
+  font-weight: 500;
+  max-width: 45%; }
+
+.upperCaseTxt {
+  text-transform: uppercase; }
+
+.mediumTxt {
+  font-size: 3rem; }
+
+.textLeftNoPadding {
+  text-align: left; }
+
+.textLeftSmallPadding {
+  text-align: left;
+  margin-top: 3vw;
+  margin-bottom: 3vw; }
+
+.textRight {
+  text-align: right;
+  text-transform: uppercase;
+  margin-left: auto; }
+
+.textRightNoPadding {
+  text-align: right; }
+
+@media (max-width: 625px) {
+  .textRight {
+    padding-left: 5%; } }
+@media (max-width: 676px) {
+  h1 {
+    font-size: 5rem; }
+
+  h2 {
+    font-size: 3.5rem; }
+
+  h3 {
+    font-size: 3rem; }
+
+  h4 {
+    font-size: 2.8rem; }
+
+  h5 {
+    font-size: 2.6rem; }
+
+  p {
+    font-size: 2.3rem; }
+
+  span {
+    font-size: 1.2rem; }
+
+  .smallerTxt {
+    font-size: 1.8rem; } }
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2); }
+  .modal .video-wrap {
+    overflow: hidden;
+    margin-top: 50vh;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    width: -moz-fit-content;
+    height: fit-content;
+    height: -moz-fit-content;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 5; }
+    .modal .video-wrap video, .modal .video-wrap iframe {
+      width: 85vw;
+      max-width: 180rem;
+      height: 60vw;
+      max-height: 90vh;
+      border: 0.5rem solid #ffffff; }
+    .modal .video-wrap img {
+      position: relative;
+      top: 50%;
+      z-index: 2;
+      cursor: pointer; }
+
+@media (min-width: 905px) {
+  .modal .video-wrap video, .modal .video-wrap iframe {
+    width: 850px;
+    height: 500px;
+    max-width: 180rem;
+    max-height: 100rem; } }
+@media (max-width: 905px) {
+  .modal .video-wrap video, .modal .video-wrap iframe {
+    max-width: 180rem; } }
+
+/*# sourceMappingURL=video-modal.css.map */

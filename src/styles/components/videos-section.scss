@@ -1,0 +1,129 @@
+@import '../base/colors';
+@import '../base/container';
+@import '../base/typography';
+
+.videos-section {
+    @include gradientMixin($thirdGradient);
+
+    & > div {
+        @include flexSectionWithColumn;
+        @include fullContainer;
+        @include verticalPaddingAllScreens;
+    }
+ 
+
+    h5 {
+        max-width: 500px;
+    }
+    .img-wrap {
+        position: relative;
+        cursor: pointer;
+        @include playIcon("../images/videos/Play-button.svg");
+        &::before {
+            top: calc(50% - 40px);
+            top: -webkit-calc(50% - 40px);
+            left: calc(50% - 40px);
+            left: -webkit-calc(50% - 40px);
+            z-index: 2;
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+       
+
+    & > div > *:nth-child(1) {
+   
+
+        img {
+            object-position: left;
+            left: 0;
+                 z-index: 2;
+        }
+
+        h5 {
+            @include text-style(700);
+            @include borderHorizontal(left, top);
+            @include borderHorizontal(left, bottom);
+        }
+    } 
+    & > div > *:nth-child(2) {
+        margin-left: auto;
+
+        h5 {
+            @include text-style(700, right);
+            @include borderHorizontal(right, top);
+            margin-left: auto;
+        }
+        img {
+            &:hover {
+                z-index: 5;
+            }
+        }
+    } 
+}
+
+@media (min-width: 905px) {
+    .videos-section > div {
+
+        h5 {
+            max-width: 500px;
+            
+        }
+        .img-wrap {
+            width: 50vw;
+            height: 30vw;
+            max-width: 900px;
+            img {
+                object-fit: cover;
+                bottom: 0;  
+            }
+        }
+        
+    
+        & > *:nth-child(1) {
+            z-index: 2;
+    
+            .text-wrap {
+                width: 70%;
+            }
+    
+            img {
+                height: 30vw;
+                object-position: left;
+                left: 0;
+            }
+    
+            h5 {
+                @include text-style(700);
+                @include borderHorizontal(left, bottom)
+            }
+        } 
+        & > *:nth-child(2) {
+            @include changeOrder;
+            position: relative;
+    
+            .img-wrap {
+                height: 30vw;
+                position: absolute;
+                z-index: 0;
+                right: 0;
+                bottom: 0;
+                img {
+                    height: 30vw;
+                }
+            }
+         
+            .text-wrap {
+                margin-left: auto;
+                width: 80%;
+                h5 {
+                    @include borderHorizontal(right, bottom);
+                    border-left: 0;
+                }
+            }
+        } 
+    }
+}
+

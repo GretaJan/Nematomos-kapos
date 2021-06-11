@@ -1,0 +1,211 @@
+@import '../base/colors';
+@import '../base/container';
+@import '../base/typography';
+
+
+.artboard-section  > div {
+    @include fullContainer;
+    @include verticalPaddingAllScreens;
+
+
+    .arrow-section {
+        @include flexSectionWithColumn;
+        margin-bottom: 4vw;
+
+        & > * {
+            width: 50%;
+        }
+
+        & > *:nth-child(1) > .text-container {
+            width: 100rem;
+        }
+
+        & > *:nth-child(2) {
+            width: 50%;
+            position: relative;
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            top: 0;
+            right: 0;
+        }
+
+    }
+
+    .text-container {
+
+        .text-inner-wrap {
+            margin-left: auto; 
+        }
+
+        h1 {
+            @include titleLine(left);
+            @include text-style(700);
+        }
+        p {
+            @include textWidthContainer(65rem);
+        }
+
+        .text-inner-wrap > *:nth-child(2) {
+            @include text-style(500, left);
+        }
+        .text-inner-wrap > *:nth-child(3) {
+            padding-bottom: 4vw;
+            @include text-style(700, left);
+        }
+    }
+}
+
+.artboard-btn-wrap {
+    @include flexSectionWithColumn;
+
+    & > *:nth-child(1) {
+        width: 70%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    & > *:nth-child(2) {
+        width: 30%;
+        background-color: $artboardGrey;
+        display: flex;  
+        display:-webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+
+        @include textTransform;
+        & > div {
+            padding: 1.7em 1.8em;
+            background-color: $blueBtn;
+            border-radius: 15px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1360px) {
+
+    .artboard-section {
+        .arrow-section {
+            
+            & > *:nth-child(1) {
+                width: 70%;
+            }
+
+            & > *:nth-child(2) {
+                width: 30%;
+            }
+        }
+
+        .arrow-section {
+            img {
+                right: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1270px) {
+
+    .artboard-section {
+        .arrow-section {
+            
+            & > *:nth-child(1) {
+                width: 50%;
+            }
+
+            & > *:nth-child(2) {
+                width: 50%;
+                margin-left: auto;
+                display: flex;
+                justify-content: center;
+                -moz-justify-content: center;
+                -ms-justify-content: center;
+                -webkit-justify-content: center;
+
+            }
+            img {
+                max-width: 100%;
+                margin-top: 0;
+                transform: translateY(0);
+                -webkit-transform: translateY(0);
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -o-transform: translateY(0);
+            }
+        }
+    }  
+}
+
+
+@media (max-width: 904px) {
+
+        .artboard-section > div {
+
+            .arrow-section {
+
+                & > *:nth-child(1) {
+                    width: 100%
+                }
+                & > *:nth-child(2) {
+                    width: 100%
+                }
+
+                img {
+                    position: relative;
+                    width: 100%;
+                    top: 0;
+                    transform: translateY(0);
+                    -webkit-transform: translateY(0);
+                    -moz-transform: translateY(0);
+                    -ms-transform: translateY(0);
+                    -o-transform: translateY(0);
+                }
+
+            .text-container {
+                width: 100%;
+                height: auto;
+
+                .text-inner-wrap {
+                    margin-left: auto; 
+                }
+            }
+        }
+    }
+    .artboard-btn-wrap {
+        & > *:nth-child(1) {
+            width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        & > *:nth-child(2) {
+            width: 100%;
+            background-color: rgba(0,0, 0, 0);
+            margin-top: 4vw;
+        }
+    }
+}
+
+@media (max-width: 504px) {
+    .artboard-btn-wrap {
+        & > *:nth-child(1) {
+            width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        & > *:nth-child(2) {
+            width: 100%;
+            margin-top: 4vw;
+        }
+    }
+}

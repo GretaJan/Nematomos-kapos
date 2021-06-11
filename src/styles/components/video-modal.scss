@@ -1,0 +1,62 @@
+@import '../base/colors';
+@import '../base/container';
+@import '../base/typography';
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    top:0;
+    background-color: rgba(0, 0, 0, .2);
+    .video-wrap {
+        overflow: hidden;
+        margin-top: 50vh;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        width: -moz-fit-content;
+        height: fit-content;
+        height: -moz-fit-content;
+        box-shadow: $blackBoxShadow;
+        -webkit-box-shadow:  $blackBoxShadow;
+        -moz-box-shadow:  $blackBoxShadow;
+        z-index: 5;
+        video , iframe{
+            width: 85vw;
+            max-width: 180rem;
+            height: 60vw;
+            max-height: 90vh;
+            border: .5rem solid $whiteColor;
+        }
+        img {
+            position: relative;
+            top: 50%;
+            z-index: 2;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 905px) {
+    .modal {
+        .video-wrap {
+            video, iframe {
+                width: 850px;
+                height: 500px;
+                max-width: 180rem;
+                max-height: 100rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 905px) {
+    .modal {
+        .video-wrap {
+            video, iframe {
+                max-width: 180rem;
+            }
+        }
+    }
+}

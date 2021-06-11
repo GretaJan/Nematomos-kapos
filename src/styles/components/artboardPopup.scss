@@ -1,0 +1,78 @@
+@import '../base/colors';
+@import '../base/typography';
+@import '../base/container';
+
+
+.popup-modal {
+    position: fixed;
+    z-index: 10;
+    top:0;
+    background-color: rgba(0, 0, 0, .2);
+    width: 100vw;
+
+    .popup-inner {
+        @include halfContainer;
+        @include verticalPaddingAllScreens;
+        position: relative;
+        background: $artboardGrey;
+        width: 95% !important;
+        color: $blueBtn;
+        box-shadow: $blackBoxShadow;
+        -webkit-box-shadow:  $blackBoxShadow;
+        -moz-box-shadow:  $blackBoxShadow;
+        margin-top: 50vh;
+        transform: translateY(-50%);
+        -webkit-transform:  translateY(-50%);
+        -moz-transform:  translateY(-50%);
+        -ms-transform:  translateY(-50%);
+        -o-transform:  translateY(-50%);
+
+        ul {
+            list-style: disc;
+            margin:  2.8rem 0 2.5rem 0;
+            li {
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 1.8rem;
+            }
+        }
+        .questions {
+            p {
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+        
+            a, span {
+                color: $blueBtn;
+                font-size: 1.8rem;
+            }
+        }
+
+        .close-wrap {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            &::after {
+                content: '';
+                background: url("../images/form/close.png") no-repeat;
+                background-size: contain;
+                display: block;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: 905px) {
+    .popup-modal {
+        width: 100vw;
+        min-height: 100vh;
+
+        .popup-inner {
+            max-width: 640px;
+        }
+    }
+}

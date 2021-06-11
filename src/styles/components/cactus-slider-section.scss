@@ -1,0 +1,190 @@
+
+@import '../base/colors';
+@import '../base/typography';
+@import '../base/container';
+
+
+.cactus-slider-section {
+    .image-container {
+        @include imageContainer;
+    }
+
+    .text-container {
+        @include absoluteTextContainer;
+        bottom: 20%;
+
+        .text-inner-wrap {
+            @include textWidthContainer(50rem, 40rem);
+            margin-left: auto; 
+            @include sliderAbsoluteText;
+        }
+
+        h5 {
+            @include text-style(700, right);
+        }
+      
+    }
+}
+
+
+.slider-bottom-section {
+    @include gradientMixin($secGradient);
+    .icons-wrap-section {
+
+        @include fullContainer;
+        @include flexSectionWithColumn;
+    
+        .text-inner-wrap {
+            @include textWidthContainer(80rem);
+            @include textPadding;
+            transform: translateY(25%);
+            -webkit-transform: translateY(25%);
+            -moz-transform: translateY(25%);
+            -ms-transform: translateY(25%);
+            -o-transform: translateY(25%);
+    
+            h5 {
+                @include text-style(500);
+                @include textTransform;
+            }
+        }
+    
+        .icons-main-wrap {
+            display: flex;
+            justify-content: center;
+            transform: translateY(50%);
+            -webkit-transform: translateY(50%);
+            -moz-transform:translateY(50%);
+            -ms-transform:translateY(50%);
+            -o-transform: translateY(50%);
+            z-index: 1;
+            height: fit-content;
+            height: -moz-fit-content;
+
+            .icon-wrap:nth-child(1)
+            {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard-110.png');
+                background-size:  auto 70%;
+                background-repeat: no-repeat;
+                background-position: center;
+    
+                &:hover {
+                    background-image: url('../images/iconSlides/icons1/iconospngArtboard-10-copy0.png');
+                }
+            }
+            .icon-wrap:nth-child(1).active-icon {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard-10-copy0.png');
+            }
+            .icon-wrap:nth-child(2)
+            {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard-90.png');
+                background-size: auto 70%;
+                background-repeat: no-repeat;
+                background-position: center;
+    
+                &:hover {
+                    background-image: url('../images/iconSlides/icons1/iconospngArtboard-9-copy0.png');
+                }
+            }
+            .icon-wrap:nth-child(2).active-icon {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard-9-copy0.png');
+            }
+            .icon-wrap:nth-child(3)
+            {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard-111.png');
+                background-size: auto 70%;
+                background-repeat: no-repeat;
+                background-position: center;
+    
+                &:hover {
+                    background-image: url('../images/iconSlides/icons1/iconospngArtboard-11-copy0.png');
+                }
+            }
+            .icon-wrap:nth-child(3).active-icon {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard-11-copy0.png');
+            }
+
+            .icon-wrap:nth-child(4)
+            {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard 120.png');
+                background-size: auto 70%;
+                background-repeat: no-repeat;
+                background-position: center;
+    
+                &:hover {
+                    background-image: url('../images/iconSlides/icons1/iconospngArtboard-12-copy0.png');
+                }
+            }
+            .icon-wrap:nth-child(4).active-icon {
+                background-image: url('../images/iconSlides/icons1/iconospngArtboard-12-copy0.png');
+            }
+    
+            .icon-wrap {
+                @include iconPseudoCircle(bottom);
+            } 
+
+            .active-icon {
+                @include activeIcon;
+            }
+        }
+    }
+
+}
+
+.topElement > .icon-wrap {
+
+    &::after {
+        top: -1.5rem;
+    }
+}
+
+.icon-wrap {
+    @include iconStyles;
+    height: 12vw;
+    flex: 25%;
+    min-height: 90px;
+    min-width: 90px;
+    max-width: 165px;
+    max-height: 165px;
+}
+
+@media (min-width: 905px){
+
+    .cactus-slider-section {
+        @include changeOrder;
+        
+        .text-container {
+            bottom: 50%;
+           @include alignRight(-50%);
+        }
+    }  
+
+    .slider-bottom-section {
+       
+        .icons-wrap-section {
+            @include fullContainer;
+            @include flexSectionWithColumn;
+    
+            & > *:nth-child(1) {
+                flex: 1 1 40%;
+                max-width: 100rem;
+            }
+
+            & > *:nth-child(2) {
+                flex: 1 1 55%;
+                margin-left: 5%;
+            }
+            .text-inner-wrap {
+                transform: translateY(0);
+            }
+            .icons-main-wrap {
+                transform: translateY(-50%);
+                margin-bottom: 0;
+                justify-content: flex-end; 
+                -moz-justify-content: flex-end; 
+                -ms-justify-content: flex-end; 
+                -webkit-justify-content: flex-end; 
+            }
+        }
+    }
+}

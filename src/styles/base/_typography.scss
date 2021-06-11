@@ -1,0 +1,210 @@
+@import './colors';
+
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline-color: $lightGrey;
+    outline-width: 1px;
+}
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+    color: $whiteColor;
+}
+body {
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $whiteColor;
+    margin: .2em;
+}
+
+body {
+    font-family: "Montserrat";
+}
+
+h1 {
+    font-size: 7rem;
+    position: relative;
+    padding-bottom: 2.8rem;
+    margin-bottom: 2.8rem;
+}
+
+.afterLineRight::after {
+    content: '';
+    width: 1em;
+    height: 3px;
+    display: block;
+    background-color: $whiteColor;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.afterLineLeft::after {
+    content: '';
+    width: 1em;
+    height: 3px;
+    display: block;
+    background-color: $whiteColor;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 3.7rem;
+}
+
+h5 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2.5rem;
+}
+
+span {
+    font-size: 1.2rem;
+}
+
+.smallerTxt {
+    font-size: 2.8rem;
+}
+
+
+.boldTxt {
+    font-weight: 700;
+}
+
+.lightTxt {
+    font-weight: 300;
+}
+
+.regularTxt {
+    font-weight: 500;
+    max-width: 45%;
+}
+
+.upperCaseTxt {
+    text-transform: uppercase;
+}
+
+.mediumTxt {
+    font-size: 3rem;
+}
+
+.textLeftNoPadding {
+    text-align: left;
+}
+
+.textLeftSmallPadding {
+    text-align: left;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+.textRight {
+    text-align: right;
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+.textRightNoPadding {
+    text-align: right;
+}
+
+
+@media (max-width: 625px){
+    .textRight {
+       padding-left: 5%;
+    }
+}
+
+
+@media (max-width: 676px){
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+    
+    h3 {
+        font-size: 3rem;
+    }
+    
+    h4 {
+        font-size: 2.8rem;
+    }
+    
+    h5 {
+        font-size: 2.6rem;
+    }
+    
+    p {
+        font-size: 2.3rem;
+    }
+    
+    span {
+        font-size: 1.2rem;
+    }
+    
+    .smallerTxt {
+        font-size: 1.8rem;
+    }
+}
+
+// MIXINS
+@mixin text-style($weight, $alignment: left){
+    font-weight: $weight; 
+    text-align: $alignment;  
+}
+
+@mixin textTransform(){
+    text-transform: uppercase;
+}
+
+@mixin textPadding(){
+    padding: 4vw 0;
+}
+
+@mixin titleLine($direction){
+    &::after {
+        content: '';
+        width: 1em;
+        height: 3px;
+        display: block;
+        background-color: $whiteColor;
+        bottom: 0;
+        #{$direction}: 0;
+        position: absolute;
+    }
+}
+
+@mixin borderHorizontal($horizontalDirection, $verticalDirection){
+    padding-#{$horizontalDirection}: 3rem;
+    border-#{$horizontalDirection}: 2px solid $whiteColor;
+    margin-#{$verticalDirection}: 3rem;
+}

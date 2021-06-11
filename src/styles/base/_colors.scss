@@ -1,0 +1,53 @@
+$lightOrange: #f57327;
+$brightOrange: #f14f30;
+$lightOrangeBackground: #f8961e; //before last section
+$brightOrangeBackground: #f14c31;
+$brightOrangeNum: #f04034; //number
+$lightOrangeNum: #ea683f; //number
+$lightGrey: #dedede;
+$skyBlue: #8dc9d1;
+$lightBlue: #83c3cc;  //middle section
+$whiteColor: #ffffff;
+$darkerGrey: #cfd0d2;   //4th section background
+$dargkerGreyTwo: #d1d1d7;  //footer background
+$orangeBtns: #ea683f; //fotter
+$orangeTxt: #f15c41; //fotter
+$blankOrange: #fc7b41;
+$formTxtGrey: #bdbdbd;
+$blueBtn: #003f6b;
+$artboardGrey: #e1e4ea;
+$btnGrey: #808080;
+
+// Gradients
+
+$firstGradient: (to right, #f57127, #f04134);
+$secGradient: (to right, #f8921f, #f04333);
+$thirdGradient: (to right, #f78522, #f04333);
+$fourthGradient: (to right, #f35a2d, #f99a1d);
+
+//Shadow
+$blackBoxShadow: 4px 4px 15px rgba(0, 0, 0, .2);
+$orangeShadow: 4px 4px 15px rgba(206, 132, 173, .5);
+
+// Gradient
+$iconsGradient: (to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
+
+@mixin gradientMixin($colors) {
+    background-image: -o-linear-gradient($colors);
+    background-image: -ms-linear-gradient($colors);
+    background-image: -webkit-linear-gradient($colors);
+    background-image: linear-gradient($colors);
+}
+
+$backgroundColors: (
+    hands-section: $skyBlue,
+    slider-section: $skyBlue,
+    artboard-section: $skyBlue,
+);
+
+
+@each $name, $background in $backgroundColors {
+    .#{$name} {
+        background: $background
+    }
+}
